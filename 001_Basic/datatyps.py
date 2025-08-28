@@ -37,3 +37,8 @@
 # print(type(b))
 
 
+name = "dhruvil"
+email="dhruvil@gmail.com"
+# print("my name is {1} and email is {0}".format(name,email))
+
+print(f"my name is {name} and email is {email}")
