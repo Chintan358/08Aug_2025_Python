@@ -71,3 +71,7 @@ b = [100,200,300]
 # print(a.count(10))
 
 print(a.index(10))
+
+
+
+
