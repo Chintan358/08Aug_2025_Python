@@ -36,15 +36,15 @@
 # s = filter(lambda a : a%2==0,l)
 # print(list(s))
 
-from functools import reduce
+# from functools import reduce
 
-l = [1,2,3,4,15,6,7,8,9]
+# l = [1,2,3,4,15,6,7,8,9]
 
-def max(a,b):
-    if a>b :
-        return a
-    else : 
-        return b
+# def max(a,b):
+#     if a>b :
+#         return a
+#     else : 
+#         return b
 
 # k = reduce(sum,l)
 # k = reduce(lambda a,b:a+b,l)
@@ -55,3 +55,13 @@ def max(a,b):
 #perfect sqaure  :filter
 #min : reduce
 #avg  :reduce
+
+import math
+l = [1,2,3,4,5,6,7,8,9,25,49]
+def check_p_square(a):
+    if math.sqrt(a).is_integer():
+        return a
+
+# k = filter(check_p_square,l)
+k = filter(lambda a : math.sqrt(a).is_integer(),l)
+print(list(k))
