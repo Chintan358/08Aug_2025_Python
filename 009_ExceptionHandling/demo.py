@@ -25,14 +25,24 @@
 
 
 
-def test():
-    try :
-        a = int(input("Enter number : "))
-        return 1
-    except Exception as e:
-        return 0
-    finally :
-        print("Program exected...")
+# def test():
+#     try :
+#         a = int(input("Enter number : "))
+#         return 1
+#     except Exception as e:
+#         return 0
+#     finally :
+#         print("Program exected...")
 
-a = test()
-print(a)
+# a = test()
+# print(a)
+
+
+print("Program started")
+try :
+    a = 10
+    b = a/0
+    print(b)
+except Exception as e:
+    print(e)
+print("Program ended")
