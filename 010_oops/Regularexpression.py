@@ -24,9 +24,9 @@ import re
 #     print("Invalid number")
 
 #tops@gmial.com
-# email = input("Enter your email: ")
-# k = re.match('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',email)
-# if k:
-#     print("Valid email")    
-# else:
-#     print("Invalid email")
+email = input("Enter your email: ")
+k = re.match('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',email)
+if k:
+    print("Valid email")    
+else:
+    print("Invalid email")
