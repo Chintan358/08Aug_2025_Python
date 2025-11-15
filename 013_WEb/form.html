@@ -5,6 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .textfield {
+            width: 150px;
+            height: 30px;
+            border: 1px solid black;
+            border-radius: 5px;
+            box-shadow: 1px 3px;
+
+        }
+
+        .name {
+            background-color: brown;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,16 +29,16 @@
         <form action="" method="post">
 
             <label for="name">Name</label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" class="textfield name">
 
             <br>
             <br>
             <label for="email">Email</label>
-            <input type="text" name="email" id="email">
+            <input type="text" name="email" id="email" class="textfield">
 
             <br><br>
             <label for="pass">Password</label>
-            <input type="password" name="pass" id="pass">
+            <input type="password" name="pass" id="pass" class="textfield">
             <br><br>
 
             <label for="">Gender</label>
