@@ -1,0 +1,34 @@
+create venv : 
+py -m venv myenv
+
+start : 
+myenv/scrips/activate
+
+install django :
+pip install django
+
+
+create django project : 
+py -m django startproject <projectname> .
+
+start application : 
+py manage.py runserver
+
+create app : 
+py manage.py startapp <myapp>
+
+Register app in project [setting.py]
+INSTALLD_APP = [
+    'myapp'
+]
+
+**********************
+project [urls.py] 
+path("",include("myapp.urls"))
+
+myapp[urls.py]
+path("",index,name="index")
+
+create index function views and import view on urls py
+
+create templates forder in myapp and ther create html file
