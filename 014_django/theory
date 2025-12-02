@@ -1,34 +1,62 @@
-create venv : 
-py -m venv myenv
+# create venv : 
+# py -m venv myenv
 
-start : 
-myenv/scrips/activate
+# start : 
+# myenv/scrips/activate
 
-install django :
-pip install django
+# install django :
+# pip install django
 
 
-create django project : 
-py -m django startproject <projectname> .
+# create django project : 
+# py -m django startproject <projectname> .
 
-start application : 
-py manage.py runserver
+# start application : 
+# py manage.py runserver
 
-create app : 
-py manage.py startapp <myapp>
+# create app : 
+# py manage.py startapp <myapp>
 
-Register app in project [setting.py]
-INSTALLD_APP = [
-    'myapp'
-]
+# Register app in project [setting.py]
+# INSTALLD_APP = [
+#     'myapp'
+# ]
 
-**********************
-project [urls.py] 
-path("",include("myapp.urls"))
+# **********************
+# project [urls.py] 
+# path("",include("myapp.urls"))
 
-myapp[urls.py]
-path("",index,name="index")
+# myapp[urls.py]
+# path("",index,name="index")
 
-create index function views and import view on urls py
+# create index function views and import view on urls py
 
-create templates forder in myapp and ther create html file
+# create templates forder in myapp and ther create html file
+
+# create models in myapp/models.py and migrate
+# py manage.py makemigrations
+# py manage.py migrate
+
+# create superuser to access admin panel
+# py manage.py createsuperuser
+
+# open shell to test models
+# py manage.py shell
+
+#import models
+#add data
+#from myapp.models import *
+#student1 = Student(first_name="John", last_name="Doe", email="abc @xyz.com", age=20)
+#student1.save()
+
+#view data
+#Student.objects.all()
+
+#update data
+#student = Student.objects.get(id=1)
+#student.age = 21
+#student.save()
+
+# delete data
+#student = Student.objects.get(id=1)
+#student.delete()
