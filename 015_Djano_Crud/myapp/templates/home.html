@@ -14,11 +14,14 @@
         <h1>Welcome to the Home Page</h1>
         <span>{{success}}</span>
         <br>
-        <input type="text" name="name" placeholder="Enter your name">
-        <input type="text" name="email" placeholder="Enter your email">
-        <input type="text" name="age" placeholder="Enter your age">
+        <input type="hidden" name="id" value="{{st.id}}">
+        <input type="text" name="name" placeholder="Enter your name" value="{{st.name}}">
+        <input type="text" name="email" placeholder="Enter your email" value="{{st.email}}">
+        <input type="text" name="age" placeholder="Enter your age" value="{{st.age}}">
         <input type="submit" value="Submit">
     </form>
+    <br>
+    <a href="{%url 'display'%}">View All Data</a>
 </body>
 
 </html>
