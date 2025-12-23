@@ -12,17 +12,33 @@
     <script>
 
         $(document).ready(function () {
-
+            countries()
         })
 
         function send() {
             var data = $('#data').val()
 
             $.get('view', { data }, function (rt) {
-                alert(rt)
+
+                row = "<ul>"
+                rt.products.map(ele => {
+                    row += `<li>${ele.name}</li>`
+                })
+                row += "</ul>"
+                $("#tdata").html(row)
             })
         }
 
+        function countries() {
+
+            $.get("countries", {}, function (rt) {
+                var options = "<option value='0'>---Select Country---</option>"
+                rt.countries.map(ele => {
+                    options += `<option>${ele.name}</option>`
+                })
+                $("#country").html(options)
+            })
+        }
 
     </script>
 
@@ -30,8 +46,26 @@
 
 <body>
 
-    <input type="text" name="data" id="data">
-    <button onclick="send()">Click me</button>
+    <input type="text" name="data" id="data" onkeyup="send()">
+    <div id="tdata"></div>
+
+    <br>
+    <hr>
+    <br>
+
+    <select name="country" id="country">
+       
+    </select>
+
+    <select name="state" id="state">
+        <option value="0">---select state---</option>
+    </select>
+
+    <select name="city" id="city">
+        <option value="0">---select city---</option>
+    </select>
+
+
 </body>
 
 </html>
