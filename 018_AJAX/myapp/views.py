@@ -29,3 +29,13 @@ def view(request):
 def countries(request):
     countries = Country.objects.all()
     return JsonResponse({"countries":list(countries.values())})
+
+def states(request):
+    cid = request.GET['cid']
+    states = State.objects.filter(country_id=cid)
+    return JsonResponse({"states":list(states.values())})
+
+def cities(request):
+    sid = request.GET['sid']
+    cities = City.objects.filter(state_id=sid)
+    return JsonResponse({"cities":list(cities.values())})
