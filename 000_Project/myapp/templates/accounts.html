@@ -58,11 +58,13 @@
                   <th>PayID : {{od.payid}}</th>
                   <th>PayType : {{od.paytype}}</th>
                   <th>Total</th>
+                  <th>Address</th>
                 </tr>
                 <tr>
                   <th>Order Date : {{od.data}}</th>
                   <th>Status : {{od.status}}</th>
                   <th>{{od.total}}</th>
+                  <th>{{od.address.address}}</th>
                 </tr>
                 <tr>
                   <th>Id</th>
@@ -98,17 +100,24 @@
             </form>
           </div>
         </div>
+
+
         <div class="tab__content" content id="address">
+
           <h3 class="tab__header">Shipping Address</h3>
+          <br>
+
           <div class="tab__body">
-            <address class="address">
-              3522 Interstate <br />
-              75 Business Spur, <br />
-              Sault Ste. <br />
-              Marie, Mi 49783
-            </address>
-            <p class="city">New York</p>
-            <a href="#" class="edit">Edit</a>
+
+            <input type="text" id="adr" placeholder="Address" class="form__input" />
+
+
+            <button class="btn btn--md" onclick="addaddress()">Add address</button>
+
+            <br>
+            <div id="alladr">
+
+            </div>
           </div>
         </div>
         <div class="tab__content" content id="change-password">
@@ -145,5 +154,35 @@
     </div>
   </section>
 </main>
+<script>
+  $(document).ready(function () {
+    get_address()
+  })
+
+
+  function addaddress() {
+    var address = $('#adr').val()
+    $.get('add_address', { address }, function (rt) {
+
+      get_address()
+    })
+  }
+
+  function get_address() {
+    $.get('get_address', {}, function (rt) {
+
+      var adr = ""
+      rt.adr.map(ele => {
+        adr += `<address class="address" >
+                ${ele.address}
+              </address>
+              <a href="#" class="edit">Edit</a>
+              <br><br>
+              `
+      })
+      $("#alladr").html(adr)
+    })
+  }
+</script>
 
 {% endblock %}
