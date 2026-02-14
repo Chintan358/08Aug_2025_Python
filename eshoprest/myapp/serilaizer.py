@@ -11,14 +11,17 @@ Order, OrderItem
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'email']
-
+        fields = ['id', 'username']
+    
+    def create(self, validated_data):
+        user = User.objects.create_user(**validated_data)
+        return user
 # ---------------- Category ----------------
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = '**all**'
+        fields = '__all__'
 
 # ---------------- Product ----------------
 
@@ -45,7 +48,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
 class AddressSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
-
+    
 
     class Meta:
         model = Address
